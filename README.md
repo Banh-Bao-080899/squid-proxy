@@ -5,6 +5,7 @@ sudo nano /etc/apt/sources.list
     *add deb:
       ```
       deb http://deb.debian.org/debian stretch main contrib non-free
+      .
       deb-src http://deb.debian.org/debian stretch main contrib non-free
      ```
 ```
