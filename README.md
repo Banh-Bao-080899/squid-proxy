@@ -116,4 +116,4 @@ Elite configs:
               reply_header_access Connection allow all
               reply_header_access All deny all
               ```
-*restart squid: sudo systemctl restart squid
+restart squid: sudo systemctl restart squid
