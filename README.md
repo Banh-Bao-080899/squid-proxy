@@ -119,5 +119,6 @@ Elite configs:
 restart squid: sudo systemctl restart squid
 
 ## Links
-spoofing http header [Markdown Live Preview](https://www.metahackers.pro/spoof-http-header-using-squid-proxy/)
-Set up high anonymous elite proxy [Markdown Live Preview](https://www.metahackers.pro/setup-high-anonymous-elite-proxy/)
+Spoofing http header [Spoofing Http Header](https://www.metahackers.pro/spoof-http-header-using-squid-proxy/)
+
+Set up high anonymous elite proxy [High anonymous](https://www.metahackers.pro/setup-high-anonymous-elite-proxy/)
