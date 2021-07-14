@@ -67,8 +67,7 @@ change port proxy server:
      http_port 443
      http_port 80
     ```
-Elite configs: ```
-            ###Deny headers
+Elite configs:```
               request_header_access Via deny all
               request_header_access Forwarded-For deny all
               request_header_access X-Forwarded-For deny all
@@ -76,7 +75,6 @@ Elite configs: ```
               request_header_access From deny all
               request_header_access User-Agent deny all
 
-            ###Deny headers
               reply_header_access Via deny all
               reply_header_access Server deny all
               reply_header_access WWW-Authenticate deny all
@@ -116,5 +114,5 @@ Elite configs: ```
               reply_header_access Content-Disposition allow all
               reply_header_access Connection allow all
               reply_header_access All deny all
-```
+              ```
 *restart squid: sudo systemctl restart squid
