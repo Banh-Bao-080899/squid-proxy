@@ -1,11 +1,9 @@
 # squid-proxy
 setup high anonymous with squid
 
-sudo nano /etc/apt/sources.list and add deb:
-      ```
+sudo nano /etc/apt/sources.list and add deb:```
 deb http://deb.debian.org/debian stretch main contrib non-free
-deb-src http://deb.debian.org/debian stretch main contrib non-free
-     ```
+deb-src http://deb.debian.org/debian stretch main contrib non-free```
 ```
 sudo apt clean
 sudo apt update
