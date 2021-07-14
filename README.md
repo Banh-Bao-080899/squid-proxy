@@ -62,7 +62,7 @@ DEB_CONFIGURE_EXTRA_FLAGS := BUILDCXXFLAGS="$(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS)" 
  ```               
 Configure the proxy server,edit /etc/squid/squid.conf and change: 
 ```http_access deny all -> http_access allow all```
-change port proxy server:
+. Then, change port proxy server:
     ```
      http_port 443
      http_port 80
