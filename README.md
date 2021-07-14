@@ -65,9 +65,11 @@ Configure the proxy server,edit /etc/squid/squid.conf and change:
 . Then, change port proxy server:
     ```
      http_port 443
+
      http_port 80
     ```
-Elite configs:```
+Elite configs:
+
               request_header_access Via deny all
               request_header_access Forwarded-For deny all
               request_header_access X-Forwarded-For deny all
