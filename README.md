@@ -3,19 +3,25 @@ setup high anonymous with squid
 
 sudo nano /etc/apt/sources.list
     *add deb:
+    ```
       deb http://deb.debian.org/debian stretch main contrib non-free
       deb-src http://deb.debian.org/debian stretch main contrib non-free
-.
+     ```
+```
 sudo apt clean
 sudo apt update
-.
+```
+```
 sudo apt source squid
+```
+```
 sudo apt build-dep squid3 (or squid)
-.
+```
+
 sudo nano squid3-3.5.23/debian/rules
 .
-*In rules add code:
-
+In rules add code:
+```
 DEB_CONFIGURE_EXTRA_FLAGS := BUILDCXXFLAGS="$(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS)" \
                 --datadir=/usr/share/squid \
                 --sysconfdir=/etc/squid \
@@ -51,17 +57,16 @@ DEB_CONFIGURE_EXTRA_FLAGS := BUILDCXXFLAGS="$(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS)" 
                 --with-large-files \
                 --with-default-user=proxy \ 
                 --enable-http-violations
-                
-*Configure the proxy server
-- edit /etc/squid/squid.conf and change: 
-    http_access deny all -> http_access allow all
-    .
-    *change port proxy server
+ ```               
+Configure the proxy server,edit /etc/squid/squid.conf and change: 
+    ```http_access deny all -> http_access allow all```
+    change port proxy server:
+    ```
      http_port 443
      http_port 80
-    .
-    *Elite configs
-            ### Deny headers
+    ```
+    Elite configs: 
+            # Deny headers
               request_header_access Via deny all
               request_header_access Forwarded-For deny all
               request_header_access X-Forwarded-For deny all
@@ -69,7 +74,7 @@ DEB_CONFIGURE_EXTRA_FLAGS := BUILDCXXFLAGS="$(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS)" 
               request_header_access From deny all
               request_header_access User-Agent deny all
 
-              ### Deny headers
+            # Deny headers
               reply_header_access Via deny all
               reply_header_access Server deny all
               reply_header_access WWW-Authenticate deny all
@@ -108,6 +113,5 @@ DEB_CONFIGURE_EXTRA_FLAGS := BUILDCXXFLAGS="$(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS)" 
               reply_header_access Title allow all
               reply_header_access Content-Disposition allow all
               reply_header_access Connection allow all
-              reply_header_access All deny all
-.
+              reply_header_access All deny all ```
 *restart squid: sudo systemctl restart squid
