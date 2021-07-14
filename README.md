@@ -4,6 +4,7 @@ setup high anonymous with squid
 sudo nano /etc/apt/sources.list
 .
 deb http://deb.debian.org/debian stretch main contrib non-free
+
 deb-src http://deb.debian.org/debian stretch main contrib non-free
 .
 sudo apt clean
