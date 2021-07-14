@@ -4,11 +4,13 @@ setup high anonymous with squid
 sudo nano /etc/apt/sources.list and add deb:
 
       deb http://deb.debian.org/debian stretch main contrib non-free
-      deb-src http://deb.debian.org/debian stretch main contrib non-free```
+      deb-src http://deb.debian.org/debian stretch main contrib non-free
+update:
 ```
 sudo apt clean
 sudo apt update
 ```
+Download Squid source and build dependencies
 ```
 sudo apt source squid
 ```
@@ -16,8 +18,10 @@ sudo apt source squid
 sudo apt build-dep squid3 (or squid)
 ```
 
+Modify the package:
+```
 sudo nano squid3-3.5.23/debian/rules
-.
+```
 In rules add code:
 ```
 DEB_CONFIGURE_EXTRA_FLAGS := BUILDCXXFLAGS="$(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS)" \
