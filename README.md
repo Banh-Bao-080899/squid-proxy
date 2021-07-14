@@ -61,13 +61,12 @@ DEB_CONFIGURE_EXTRA_FLAGS := BUILDCXXFLAGS="$(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS)" 
                 --enable-http-violations
  ```               
 Configure the proxy server,edit /etc/squid/squid.conf and change: 
+
 ```http_access deny all -> http_access allow all```
 . Then, change port proxy server:
- 
-     http_port 443
 
+     http_port 443
      http_port 80
-    ```
 Elite configs:
 
               request_header_access Via deny all
