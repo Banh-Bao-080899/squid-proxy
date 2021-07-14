@@ -2,19 +2,20 @@
 setup high anonymous with squid
 
 sudo nano /etc/apt/sources.list
-
+.
 deb http://deb.debian.org/debian stretch main contrib non-free
 deb-src http://deb.debian.org/debian stretch main contrib non-free
-
+.
 sudo apt clean
 sudo apt update
-
+.
 sudo apt source squid
 sudo apt build-dep squid3 (or squid)
-
+.
 sudo nano squid3-3.5.23/debian/rules
-
+.
 *In rules add code:
+
 DEB_CONFIGURE_EXTRA_FLAGS := BUILDCXXFLAGS="$(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS)" \
                 --datadir=/usr/share/squid \
                 --sysconfdir=/etc/squid \
@@ -54,11 +55,11 @@ DEB_CONFIGURE_EXTRA_FLAGS := BUILDCXXFLAGS="$(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS)" 
 *Configure the proxy server
 - edit /etc/squid/squid.conf and change: 
     http_access deny all -> http_access allow all
-    
+    .
     *change port proxy server
      http_port 443
      http_port 80
-
+    .
     *Elite configs
             ### Deny headers
               request_header_access Via deny all
@@ -108,5 +109,5 @@ DEB_CONFIGURE_EXTRA_FLAGS := BUILDCXXFLAGS="$(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS)" 
               reply_header_access Content-Disposition allow all
               reply_header_access Connection allow all
               reply_header_access All deny all
-
+.
 *restart squid: sudo systemctl restart squid
