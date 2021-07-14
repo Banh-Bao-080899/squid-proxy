@@ -117,3 +117,7 @@ Elite configs:
               reply_header_access All deny all
               ```
 restart squid: sudo systemctl restart squid
+
+## Links
+spoofing http header [Markdown Live Preview](https://www.metahackers.pro/spoof-http-header-using-squid-proxy/)
+Set up high anonymous elite proxy [Markdown Live Preview](https://www.metahackers.pro/setup-high-anonymous-elite-proxy/)
